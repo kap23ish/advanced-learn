@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Learn - Master Languages</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-content">
+            <img src="llooggoo.png" alt="Advanced Learn Logo" class="splash-logo">
+            <h1 class="animate-text">Welcome to Advanced Learn</h1>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <p class="animate-text">Preparing your learning journey...</p>
+        </div>
+    </div>
+
+    <div id="intro-modal" class="modal">
+        <div class="modal-content">
+            <img src="llooggoo.png" alt="Advanced Learn Logo" style="width: 80px; margin-bottom: 1rem;">
+            <h2>Get Ready to Learn!</h2>
+            <p>Your language learning adventure begins in a moment...</p>
+            <div class="stats-preview">
+                <div class="stat-item">
+                    <i class="fas fa-star"></i>
+                    <h3>Multiple Languages</h3>
+                    <p>Choose from 8 different languages</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Interactive Learning</h3>
+                    <p>Games, quizzes, and more!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo-container">
+                <img src="llooggoo.png" alt="Advanced Learn Logo" class="app-logo">
+                <span class="app-name">Advanced Learn</span>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="#home" class="active" data-page="home"><i class="fas fa-home"></i> Home</a>
+            <a href="#vocabulary" data-page="vocabulary"><i class="fas fa-book"></i> Vocabulary</a>
+            <a href="#challenges" data-page="challenges"><i class="fas fa-trophy"></i> Challenges</a>
+            <a href="#achievements" data-page="achievements"><i class="fas fa-medal"></i> Achievements</a>
+            <a href="#profile" data-page="profile"><i class="fas fa-user"></i> Profile</a>
+        </div>
+        <div class="user-progress">
+            <div class="level-badge">
+                <i class="fas fa-star"></i>
+                <span id="userLevel">1</span>
+            </div>
+            <div class="progress-bar">
+                <div id="progressFill"></div>
+            </div>
+            <div class="xp-counter">XP: <span id="xpPoints">0</span></div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="welcome-section">
+            <h1><span class="highlight">Welcome to Advanced Learn</span></h1>
+            <p>Master languages through advanced learning techniques and AI-powered challenges!</p>
+            <div class="language-selector">
+                <button class="lang-btn active" onclick="selectLanguage('spanish')">
+                    <img src="https://flagcdn.com/w40/es.png" alt="Spanish">
+                    Spanish
+                </button>
+                <button class="lang-btn" onclick="selectLanguage('french')">
+                    <img src="https://flagcdn.com/w40/fr.png" alt="French">
+                    French
+                </button>
+                <button class="lang-btn" onclick="selectLanguage('german')">
+                    <img src="https://flagcdn.com/w40/de.png" alt="German">
+                    German
+                </button>
+                <button class="lang-btn" onclick="selectLanguage('italian')">
+                    <img src="https://flagcdn.com/w40/it.png" alt="Italian">
+                    Italian
+                </button>
+                <button class="lang-btn" onclick="selectLanguage('japanese')">
+                    <img src="https://flagcdn.com/w40/jp.png" alt="Japanese">
+                    Japanese
+                </button>
+                <button class="lang-btn" onclick="selectLanguage('korean')">
+                    <img src="https://flagcdn.com/w40/kr.png" alt="Korean">
+                    Korean
+                </button>
+                <button class="lang-btn" onclick="selectLanguage('mandarin')">
+                    <img src="https://flagcdn.com/w40/cn.png" alt="Mandarin">
+                    Mandarin
+                </button>
+                <button class="lang-btn" onclick="selectLanguage('portuguese')">
+                    <img src="https://flagcdn.com/w40/pt.png" alt="Portuguese">
+                    Portuguese
+                </button>
+            </div>
+        </section>
+
+        <section class="game-modes">
+            <h2>Learning Activities</h2>
+            <div class="mode-cards">
+                <div class="game-card" onclick="startGame('flashcards')">
+                    <i class="fas fa-clone"></i>
+                    <h3>Flashcards</h3>
+                    <p>Classic vocabulary learning</p>
+                    <span class="difficulty">Beginner</span>
+                </div>
+                <div class="game-card" onclick="startGame('matching')">
+                    <i class="fas fa-puzzle-piece"></i>
+                    <h3>Word Matching</h3>
+                    <p>Match words with meanings</p>
+                    <span class="difficulty">Intermediate</span>
+                </div>
+                <div class="game-card" onclick="startGame('quiz')">
+                    <i class="fas fa-question-circle"></i>
+                    <h3>Quiz Challenge</h3>
+                    <p>Test your knowledge</p>
+                    <span class="difficulty">Advanced</span>
+                </div>
+                <div class="game-card" onclick="startGame('pronunciation')">
+                    <i class="fas fa-microphone"></i>
+                    <h3>Pronunciation</h3>
+                    <p>Practice speaking</p>
+                    <span class="difficulty">All Levels</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="daily-challenge">
+            <h2>Daily Challenges</h2>
+            <div class="challenge-container">
+                <div id="dailyChallenge" class="challenge-card">
+                    <div class="challenge-header">
+                        <i class="fas fa-calendar-day"></i>
+                        <h3>Today's Challenge</h3>
+                    </div>
+                    <p id="challengeDescription">Loading...</p>
+                    <div class="challenge-reward">
+                        <span>Reward: </span>
+                        <i class="fas fa-gem"></i> 50 XP
+                    </div>
+                    <button onclick="startDailyChallenge()">
+                        <i class="fas fa-play"></i> Start Challenge
+                    </button>
+                </div>
+                <div class="streak-counter">
+                    <i class="fas fa-fire"></i>
+                    <span id="streakCount">0</span> Day Streak
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html> 
